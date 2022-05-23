@@ -1,0 +1,30 @@
+.app-header {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.app-header .users-title {
+   color: var(--title-font-color);
+   font-size: var(--main-title-mobile-font-size);
+}
+
+.btn-user-crud.btn-add-user {
+   background: var(--second-color);
+   color: var(--main-color);
+   width: 125px;
+   height: 35px;
+   padding: 7px 20px;
+   border: none;
+}
+
+@media (min-width: 768px) {
+   .App .app-header .users-title {
+      font-size: var(--main-title-font-size);
+   }
+   
+   .btn-user-crud.btn-add-user {
+      width: 227px;
+      height: 45px;
+   }
+}

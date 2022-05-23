@@ -1,0 +1,101 @@
+.card.card-user-crud {
+   background: #fff;
+   width: 100%;
+   max-width: 381px;
+   min-height: 274px;
+   padding: 20px;
+   border: 1px solid #e5e5e5;
+   border-radius: 4px;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+}
+
+.card.card-user-crud .card-header {
+   height: 72.6px;
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-end;
+}
+
+.card.card-user-crud .card-body {
+   height: 102px;
+}
+
+.card.card-user-crud .card-footer {
+   height: 74.6px;
+}
+
+.card-header-title {
+   color: var(--title-font-color);
+   font-size: 20px;
+}
+
+.card.card-user-crud .card-hr {
+   border: 0.5px solid #e5e5e5;
+}
+
+.card.card-user-crud .card-header .card-hr {
+   margin: 10.5px 0 12.5px 0;
+}
+
+.card.card-user-crud .card-footer .card-hr {
+   margin: 15px 0;
+}
+
+.card.card-user-crud .user-field {
+   margin: 10px;
+}
+
+.card.card-user-crud .user-field:first-of-type {
+   margin-top: 0;
+}
+
+.card.card-user-crud .user-field:last-of-type {
+   margin-bottom: 0;
+}
+
+.card.card-user-crud .user-field-title, .card.card-user-crud .user-field-text {
+   font-size: 16px;
+   font-weight: 400;
+}
+
+.card.card-user-crud .user-field-title {
+   color: #d3d3d3;
+   line-height: 22px;
+}
+
+.card.card-user-crud .user-field-text {
+   color: var(--font-color);
+   line-height: 24px;
+}
+
+.card.card-user-crud .card-footer.buttons-container {
+   display: flex;
+   justify-content: flex-end;
+   gap: 14px;
+}
+
+.card.card-user-crud .card-footer .btn {
+   width: 43px;
+   height: 43px;
+   border-radius: 4px;
+}
+
+.card.card-user-crud .card-footer .btn.btn-delete-user {
+   background: #d85d5d;
+   color: #fff;
+   border: 1px solid #d93f3f;
+}
+
+.card.card-user-crud .card-footer .btn.btn-update-user {
+   background: #f7f7f7;
+   color: var(--main-font-color);
+   border: 1px solid #bdbdbd;
+}
+
+@media (min-width: 768px) {
+   .card-header-title {
+      font-size: 25px;
+   }  
+}

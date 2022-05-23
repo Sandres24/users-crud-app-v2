@@ -5,8 +5,11 @@
    --second-color: #555a88;
    --red-color: #d85d5d;
    --gray-color: #f6f6f6;
-   --main-font-color: #0f0f2d;
+   --title-font-color: #0f0f2d;
+   --font-color: #302f2f;
    --main-font-family: 'Roboto', sans-serif;
+   --main-title-font-size: 50px;
+   --main-title-mobile-font-size: 40px;
 }
 
 * {
@@ -15,15 +18,40 @@
   box-sizing: border-box;
 }
 
+html {
+   scroll-behavior: smooth;
+}
+
 body {
-   color: var(--main-font-color);
+   color: var(--font-color);
    font-family: var(--main-font-family);
 }
 
 .App {
-   background: pink;
-   width: 90%;
-   max-width: 1200px;
-   margin: auto;
+   width: 95%;
+   max-width: 1236px;
+   margin: 32px auto;
+}
+
+.btn {
+   background: transparent;
+   border: 1px solid #000;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 3px;
+   cursor: pointer;
+}
+
+@media (min-width: 768px) {
+   .App {
+      margin: 48px auto;
+   }
+}
+
+@media (min-width: 1200px) {
+   .App {
+      margin: 96px auto;
+   }
 }
 

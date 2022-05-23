@@ -2,11 +2,17 @@ import ReactDOM from 'react-dom';
 import React, { useRef } from 'react';
 import './Modal.css';
 
-function Modal({ children, visibility, overlayClose, handleCloseModal }) {
-   const modalContainerRef = useRef();
+function Modal({
+   children,
+   visibility,
+   modalTitle,
+   overlayClose,
+   handleCloseModal,
+}) {
+   const modalRef = useRef();
 
    const handleClickOverlay = () => {
-      modalContainerRef.current.animate(
+      modalRef.current.animate(
          [
             { transform: 'scale(1)' },
             { transform: 'scale(1.015)' },
@@ -20,7 +26,6 @@ function Modal({ children, visibility, overlayClose, handleCloseModal }) {
 
    return (
       <div
-         ref={modalContainerRef}
          className={`modal-container ${
             visibility ? 'modal-open' : 'modal-close'
          }`}
@@ -29,10 +34,14 @@ function Modal({ children, visibility, overlayClose, handleCloseModal }) {
             className='overlay'
             onClick={overlayClose ? handleCloseModal : handleClickOverlay}
          ></div>
-
-         <div className='modal'>
+         <div ref={modalRef} className='modal'>
+            {modalTitle && (
+               <div className='modal-header'>
+                  <h2 className='modal-header-title'>{modalTitle}</h2>
+               </div>
+            )}
             <button className='btn btn-close-modal' onClick={handleCloseModal}>
-               X
+               <i className='fa-solid fa-xmark'></i>
             </button>
             {children}
          </div>
@@ -40,10 +49,17 @@ function Modal({ children, visibility, overlayClose, handleCloseModal }) {
    );
 }
 
-function ModalPortal({ children, visibility, overlayClose, handleCloseModal }) {
+function ModalPortal({
+   children,
+   visibility,
+   modalTitle,
+   overlayClose,
+   handleCloseModal,
+}) {
    return ReactDOM.createPortal(
       <Modal
          visibility={visibility}
+         modalTitle={modalTitle}
          overlayClose={overlayClose}
          handleCloseModal={handleCloseModal}
       >

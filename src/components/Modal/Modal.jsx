@@ -43,7 +43,7 @@ function Modal({
             <button className='btn btn-close-modal' onClick={handleCloseModal}>
                <i className='fa-solid fa-xmark'></i>
             </button>
-            {children}
+            <div className='modal-body'>{children}</div>
          </div>
       </div>
    );

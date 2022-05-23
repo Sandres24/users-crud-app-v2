@@ -1,10 +1,12 @@
 import React from 'react';
 import { useModal } from '../../hooks';
 import ModalPortal from '../Modal/Modal';
+import UserForm from '../UserForm/UserForm';
 import './Header.css';
 
-function Header({ selectedUser }) {
-   const { isOpen, handleOpenModal, handleCloseModal } = useModal();
+function Header({ postUser }) {
+   const { isOpen, handleOpenModal, handleCloseModal, handleDeselectUser } =
+      useModal();
 
    return (
       <section className='app-header'>
@@ -19,10 +21,17 @@ function Header({ selectedUser }) {
          <ModalPortal
             btnLabel={'Open'}
             visibility={isOpen}
-            modalTitle={selectedUser.id ? 'Update user' : 'New User'}
+            modalTitle='New user'
             overlayClose={false}
             handleCloseModal={handleCloseModal}
-         ></ModalPortal>
+         >
+            <UserForm
+               selectedUser={{}}
+               postUser={postUser}
+               handleCloseModal={handleCloseModal}
+               handleDeselectUser={handleDeselectUser}
+            />
+         </ModalPortal>
       </section>
    );
 }

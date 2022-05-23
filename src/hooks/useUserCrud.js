@@ -43,7 +43,7 @@ function useUserCrud() {
    const postUser = (user) => postUserService(user).then(() => getUsers());
 
    const updateUser = (userId, updatedUser) =>
-      updateUserService(userId, updateUser).then(() => getUsers());
+      updateUserService(userId, updatedUser).then(() => getUsers());
 
    const deleteUser = (userId) =>
       deleteUserService(userId).then(() => getUsers());

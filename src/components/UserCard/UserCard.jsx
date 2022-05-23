@@ -1,7 +1,24 @@
 import React from 'react';
 import './UserCard.css';
 
-function UserCard({ className, userInfo }) {
+function UserCard({
+   className,
+   userInfo,
+   handleOpenModal,
+   deleteUser,
+   handleSelectUser,
+   handleDeselectUser,
+}) {
+   const handleUpdateUser = () => {
+      handleSelectUser(userInfo);
+      handleOpenModal();
+   };
+
+   const handleDeleteUser = () => {
+      deleteUser(userInfo.id);
+      handleDeselectUser();
+   };
+
    return (
       <div className={`card ${className}`}>
          <div className='card-header'>
@@ -28,13 +45,13 @@ function UserCard({ className, userInfo }) {
             <div className='card-footer buttons-container'>
                <button
                   className='btn btn-card-footer btn-delete-user'
-                  onClick={() => {}}
+                  onClick={handleDeleteUser}
                >
                   <i className='fa-solid fa-trash'></i>
                </button>
                <button
                   className='btn btn-card-footer btn-update-user'
-                  onClick={() => {}}
+                  onClick={handleUpdateUser}
                >
                   <i className='fa-solid fa-pen'></i>
                </button>

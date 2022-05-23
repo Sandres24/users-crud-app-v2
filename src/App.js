@@ -4,17 +4,7 @@ import { Header, UserList } from './components';
 import { useUserCrud } from './hooks';
 
 function App() {
-   const {
-      users,
-      isLoading,
-      error,
-      selectedUser,
-      postUser,
-      updateUser,
-      deleteUser,
-      handleSelectUser,
-      handleDeselectUser,
-   } = useUserCrud();
+   const { users, isLoading, error, selectedUser } = useUserCrud();
 
    return (
       <div className='App'>

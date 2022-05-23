@@ -30,11 +30,13 @@ export const updateUserService = (userId, updatedUser) => {
    const controller = new AbortController();
    const signal = controller.signal;
 
-   return axios.put(config.baseUrl + userId, updatedUser, { signal }).finally(
-      setTimeout(() => {
-         controller.abort();
-      }, config.abortRequestAfter)
-   );
+   return axios
+      .put(config.baseUrl + userId + '/', updatedUser, { signal })
+      .finally(
+         setTimeout(() => {
+            controller.abort();
+         }, config.abortRequestAfter)
+      );
 };
 
 export const deleteUserService = (userId) => {

@@ -20,12 +20,13 @@ function UserForm({
          }}
          onSubmit={(values, { resetForm }) => {
             const user = {
-               first_name: values.first_name,
-               last_name: values.last_name,
                email: values.email,
                password: values.password,
+               first_name: values.first_name,
+               last_name: values.last_name,
                birthday: values.birthday,
             };
+
             if (!selectedUser.id) {
                postUser(user)
                   .then(() => {
@@ -33,9 +34,10 @@ function UserForm({
                      handleCloseModal();
                   })
                   .catch((error) => {
-                     console.error(error.response);
+                     console.error(error);
                   });
             } else {
+               user.id = selectedUser.id;
                updateUser(selectedUser.id, user)
                   .then(() => {
                      resetForm();
